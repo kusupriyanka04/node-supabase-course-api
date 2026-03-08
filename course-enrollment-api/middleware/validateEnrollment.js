@@ -8,7 +8,7 @@ const validateEnrollment = (req, res, next) => {
         });
     }
 
-    if(course_id === undefine || course_id === null || course_id === ''){
+    if(course_id === undefined || course_id === null || course_id === ''){
         return res.status(400).json({
             error: 'Bad Request',
             message: 'course_id is required.',
@@ -20,3 +20,5 @@ const validateEnrollment = (req, res, next) => {
 
     next();
 };
+
+module.exports = validateEnrollment;

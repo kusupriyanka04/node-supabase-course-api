@@ -6,13 +6,13 @@ const logger = require('./middleware/logger');
 const courseRoutes = require('./routes/courses');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors());
 app.use(logger);
 
-app.use('/course', courseRoutes);
+app.use('/courses', courseRoutes);
 app.use('/', courseRoutes);
 
 app.get('/', (req, res) => {
